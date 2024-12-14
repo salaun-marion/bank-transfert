@@ -14,13 +14,9 @@ export const AddAccount = () => {
   const dispatch = useAppDispatch();
 
   const handleSubmit = (e: React.FormEvent<AddAccountFormElements>) => {
-    console.log('HERE');
     e.preventDefault();
 
     const { elements } = e.currentTarget;
-    console.log('elements', elements.accountCurrency);
-
-    console.log('Values n c b: ', elements.accountCurrency.value);
 
     const name = elements.accountName.value;
     const currency = elements.accountCurrency.value;

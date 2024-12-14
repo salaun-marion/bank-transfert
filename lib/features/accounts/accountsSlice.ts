@@ -23,9 +23,18 @@ const accountsSlice = createSlice({
     accountAdded(state, action: PayloadAction<Account>) {
       state.push(action.payload);
     },
+    accountUpdated(state, action: PayloadAction<Account>) {
+      const { id, name, currency, balance } = action.payload;
+      const existingAccount = state.find((account) => account.id === id);
+      if (existingAccount) {
+        existingAccount.name = name;
+        existingAccount.currency = currency;
+        existingAccount.balance = balance;
+      }
+    },
   },
 });
 
-export const { accountAdded } = accountsSlice.actions;
+export const { accountAdded, accountUpdated } = accountsSlice.actions;
 
 export default accountsSlice.reducer;

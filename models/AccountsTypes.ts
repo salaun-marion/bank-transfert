@@ -17,6 +17,16 @@ interface AddAccountFormFields extends HTMLFormControlsCollection {
   accountBalance: HTMLInputElement;
 }
 
+interface EditAccountFormFields extends HTMLFormControlsCollection {
+  accountName: HTMLInputElement;
+  accountCurrency: HTMLSelectElement;
+  accountBalance: HTMLInputElement;
+}
+
 export interface AddAccountFormElements extends HTMLFormElement {
   readonly elements: AddAccountFormFields;
+}
+
+export interface EditAccountFormElements extends HTMLFormElement {
+  readonly elements: EditAccountFormFields;
 }

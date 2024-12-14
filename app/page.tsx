@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { AddAccount } from './components/AddAccount';
-import { AccountsList } from './components/AccountList';
+import { SelectAccount } from './components/SelectAccount';
+import { EditAccount } from './components/EditAccount';
 
 export default function IndexPage() {
   return (
     <>
       <AddAccount />
-      <AccountsList />
+      <SelectAccount />
     </>
   );
 }
