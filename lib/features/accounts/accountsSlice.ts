@@ -1,4 +1,4 @@
-import { Account, Currency } from '@/models/AccountsTypes';
+import { Account, Currency, Transfert } from '@/models/AccountsTypes';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: Account[] = [
@@ -32,9 +32,26 @@ const accountsSlice = createSlice({
         existingAccount.balance = balance;
       }
     },
+    accountsTransfer(state, action: PayloadAction<Transfert>) {
+      const { id1, id2, balance } = action.payload;
+      const account1 = state.find((account) => account.id === id1);
+      const account2 = state.find((account) => account.id === id2);
+
+      if (account1) {
+        account1.name = account1.name;
+        account1.currency = account1.currency;
+        account1.balance = account1.balance - balance;
+      }
+      if (account2) {
+        account2.name = account2.name;
+        account2.currency = account2.currency;
+        account2.balance = account2.balance + balance;
+      }
+    },
   },
 });
 
-export const { accountAdded, accountUpdated } = accountsSlice.actions;
+export const { accountAdded, accountUpdated, accountsTransfer } =
+  accountsSlice.actions;
 
 export default accountsSlice.reducer;

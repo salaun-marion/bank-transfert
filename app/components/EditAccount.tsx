@@ -3,22 +3,29 @@
 import React from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../lib/hooks';
-import { accountUpdated } from '@/lib/features/accounts/accountsSlice';
+import {
+  accountsTransfer,
+  accountUpdated,
+} from '@/lib/features/accounts/accountsSlice';
 import { Account, EditAccountFormElements } from '@/models/AccountsTypes';
 
 export const EditAccount: React.FC<{
-  accountSelected: Account | undefined;
-}> = ({ accountSelected }) => {
-  const account = useAppSelector((state) =>
-    state.find((account) => account.name === accountSelected?.name)
-  );
-
+  accountSelected1: Account | undefined;
+  accountSelected2: Account | undefined;
+}> = ({ accountSelected1, accountSelected2 }) => {
   const dispatch = useAppDispatch();
 
-  if (!account) {
+  const account1 = useAppSelector((state) =>
+    state.find((account) => account.name === accountSelected1?.name)
+  );
+  const account2 = useAppSelector((state) =>
+    state.find((account) => account.name === accountSelected2?.name)
+  );
+
+  if (!account1 || !account2) {
     return (
       <section>
-        <h2>Account not found!</h2>
+        <h2>Transfert cannot happen!</h2>
       </section>
     );
   }
@@ -34,10 +41,9 @@ export const EditAccount: React.FC<{
 
     if (balance) {
       dispatch(
-        accountUpdated({
-          id: account.id,
-          name: account.name,
-          currency: account.currency,
+        accountsTransfer({
+          id1: account1.id,
+          id2: account2.id,
           balance,
         })
       );

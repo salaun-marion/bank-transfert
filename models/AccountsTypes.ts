@@ -11,6 +11,12 @@ export interface Account {
   balance: number;
 }
 
+export interface Transfert {
+  id1: String;
+  id2: String;
+  balance: number;
+}
+
 interface AddAccountFormFields extends HTMLFormControlsCollection {
   accountName: HTMLInputElement;
   accountCurrency: HTMLSelectElement;
