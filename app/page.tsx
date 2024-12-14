@@ -1,10 +1,16 @@
-import type { Metadata } from "next";
-import { Counter } from "./components/counter/Counter";
+import type { Metadata } from 'next';
+import { AddAccount } from './components/AddAccount';
+import { AccountsList } from './components/AccountList';
 
 export default function IndexPage() {
-  return <Counter />;
+  return (
+    <>
+      <AddAccount />
+      <AccountsList />
+    </>
+  );
 }
 
 export const metadata: Metadata = {
-  title: "Redux Toolkit",
+  title: 'Bank transfer app',
 };
