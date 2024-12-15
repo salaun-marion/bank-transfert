@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Account } from '@/models/AccountsTypes';
-import { useAppDispatch } from '../../lib/hooks';
+import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 import { useState, useEffect } from 'react';
 import { Transfer } from './Transfer';
 import { getAccounts } from '@/lib/features/accounts/accountsSlice';
@@ -11,21 +11,21 @@ import '../styles/selectAccount.css';
 export const SelectAccount = () => {
   const t = useTranslations('Select Account');
   const dispatch = useAppDispatch();
-  const [accounts, setAccounts] = useState<Account[]>([]);
+  const accounts = useAppSelector((state) => {
+    return state.accounts;
+  });
   const [selectedAccountName1, setSelectAccount1] = useState<String>('');
-  const [selectedAccountName2, SetSelectAccount2] = useState<String>('');
+  const [selectedAccountName2, setSelectAccount2] = useState<String>('');
 
   useEffect(() => {
     dispatch(getAccounts()).then((result: any) => {
       const payload = result.payload as Account[];
-
       if (payload) {
-        setAccounts(payload);
         setSelectAccount1(payload[0].name);
-        SetSelectAccount2(payload[1].name);
+        setSelectAccount2(payload[1].name);
       }
     });
-  }, [dispatch]);
+  }, []);
 
   //TODO: selection should be done with ID not name
   const accountNamePredicate = (accountName: String) => (account: Account) =>
@@ -47,7 +47,7 @@ export const SelectAccount = () => {
       <br />
       {t('to')}
       <select
-        onChange={(e) => SetSelectAccount2(e.target.value)}
+        onChange={(e) => setSelectAccount2(e.target.value)}
         value={selectedAccountName2.toString()}
       >
         <option disabled>{t('2ndaccount')}</option>

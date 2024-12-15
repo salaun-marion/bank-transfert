@@ -3,7 +3,7 @@ import { data } from './data';
 export async function GET() {
   console.log('(GET) --- Fetching the data from the back-end');
 
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  await new Promise((resolve) => setTimeout(resolve, 100));
 
   return { data: data };
 }
