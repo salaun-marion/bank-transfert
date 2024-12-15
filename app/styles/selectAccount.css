@@ -1,0 +1,21 @@
+.account-transfer{
+    background-color: var(--very-pale-orange);
+    color:var(--dark-brown);
+}
+
+.save-button{
+    background-color: var(--cyan);
+    color: var(--dark-brown);
+}
+
+select :nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.transfer{
+    border-top: 0.5px solid var(--medium-brown);
+}
+
+h4{
+    padding-top: 10px;
+}

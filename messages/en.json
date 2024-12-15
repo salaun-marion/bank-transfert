@@ -11,6 +11,8 @@
     },
     "Select Account": {
         "accounts": "Accounts",
+        "from": "From ",
+        "to": " to ",
         "1staccount": "Select first account",
         "2ndaccount": "Select second account"
     },

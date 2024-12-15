@@ -5,10 +5,10 @@ import { getTranslations } from 'next-intl/server';
 
 export default function IndexPage() {
   return (
-    <>
+    <div className="global-container">
       <AddAccount />
       <SelectAccount />
-    </>
+    </div>
   );
 }
 

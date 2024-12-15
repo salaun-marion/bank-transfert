@@ -55,12 +55,12 @@ export const Transfer: React.FC<{
   };
 
   return (
-    <section>
-      <h2>{t('title')}</h2>
+    <section className="transfer">
+      <h4>{t('title')}</h4>
       <form onSubmit={onSaveAccountClicked}>
         <label htmlFor="accountBalance">{t('balance')}</label>
-        <input type="number" id="accountBalance" required />
-        <button>{t('save')}</button>
+        <input type="number" id="accountBalance" required /> <br />
+        <button className="save-button">{t('save')}</button>
       </form>
     </section>
   );

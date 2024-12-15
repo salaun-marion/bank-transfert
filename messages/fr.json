@@ -11,6 +11,8 @@
     },
     "Select Account": {
         "accounts": "Comptes",
+        "from": "De ",
+        "to": " à ",
         "1staccount": "Sélectionnez le premier compte",
         "2ndaccount": "Sélectionnez le deuxième compte"
     },
@@ -18,7 +20,7 @@
         "title": "Application de transfert bancaire"
     },
     "Transfer": {
-        "impossible": "Transfert ne peut pas aboutir !",
+        "impossible": "Le transfert ne peut pas aboutir.",
         "not enough money": "Pas assez d'argent dans le premier compte.",
         "title": "Transfert",
         "balance": "Solde",

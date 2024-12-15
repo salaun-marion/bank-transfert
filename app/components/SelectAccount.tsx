@@ -6,6 +6,7 @@ import { useAppDispatch } from '../../lib/hooks';
 import { useState, useEffect } from 'react';
 import { Transfer } from './Transfer';
 import { getAccounts } from '@/lib/features/accounts/accountsSlice';
+import '../styles/selectAccount.css';
 
 export const SelectAccount = () => {
   const t = useTranslations('Select Account');
@@ -31,8 +32,9 @@ export const SelectAccount = () => {
     account.name === accountName;
 
   return (
-    <section className="accounts-list">
+    <section className="account-transfer container">
       <h2>{t('accounts')}</h2>
+      {t('from')}
       <select
         onChange={(e) => setSelectAccount1(e.target.value)}
         value={selectedAccountName1.toString()}
@@ -42,6 +44,8 @@ export const SelectAccount = () => {
           <option key={Number(account.id)}>{account.name}</option>
         ))}
       </select>
+      <br />
+      {t('to')}
       <select
         onChange={(e) => SetSelectAccount2(e.target.value)}
         value={selectedAccountName2.toString()}

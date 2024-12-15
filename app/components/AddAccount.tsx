@@ -9,7 +9,7 @@ import {
   Currency,
 } from '@/models/AccountsTypes';
 import { nanoid } from '@reduxjs/toolkit';
-import React from 'react';
+import '../styles/addAccount.css';
 
 export const AddAccount = () => {
   const t = useTranslations('CreateAccount');
@@ -36,21 +36,21 @@ export const AddAccount = () => {
   };
 
   return (
-    <section>
+    <section className="add-account container">
       <h2>{t('create')}</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="accountName">{t('name')}</label>
-        <input type="text" id="accountName" required />
+        <input type="text" id="accountName" required /> <br />
         <label htmlFor="accountCurrency">{t('currency')}</label>
         <select id="accountCurrency" required>
           <option value="€">{t('euro')}</option>
           <option value="$">{t('US dollar')}</option>
           <option value="¥">{t('yen')}</option>
-        </select>
+        </select>{' '}
+        <br />
         <label htmlFor="accountBalance">{t('balance')}</label>
-        <input type="number" id="accountBalance" required />
-
-        <button>{t('add')}</button>
+        <input type="number" id="accountBalance" required /> <br />
+        <button className="add-button">{t('add')}</button>
       </form>
     </section>
   );

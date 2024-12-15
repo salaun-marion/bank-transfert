@@ -1,0 +1,9 @@
+.add-account{
+    background-color: var(--soft-red);
+    
+    margin-right: 2em;
+}
+
+.add-button{
+    background-color: var(--dark-brown);
+}
