@@ -23,7 +23,7 @@ export const Transfer: React.FC<{
     state.accounts.find((account) => account.name === accountSelected2?.name)
   );
 
-  if (!account1 || !account2) {
+  if (!account1 || !account2 || account1 === account2) {
     return (
       <section>
         <h2>{t('impossible')}</h2>
