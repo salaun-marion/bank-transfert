@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
-import { AddAccount } from './components/AddAccount';
-import { SelectAccount } from './components/SelectAccount';
-import { Transfer } from './components/Transfer';
+import { AddAccount } from '../components/AddAccount';
+import { SelectAccount } from '../components/SelectAccount';
 
 export default function IndexPage() {
   return (

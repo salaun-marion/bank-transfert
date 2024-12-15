@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { accountAdded } from '@/lib/features/accounts/accountsSlice';
 import { useAppDispatch } from '@/lib/hooks';
 import {
@@ -11,6 +12,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import React from 'react';
 
 export const AddAccount = () => {
+  const t = useTranslations('Account');
   const dispatch = useAppDispatch();
 
   const handleSubmit = (e: React.FormEvent<AddAccountFormElements>) => {
@@ -35,7 +37,7 @@ export const AddAccount = () => {
 
   return (
     <section>
-      <h2>Add a New Account</h2>
+      <h2>{t('hello')}</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="accountName">Name</label>
         <input type="text" id="accountName" required />

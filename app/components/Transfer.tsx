@@ -13,7 +13,6 @@ export const Transfer: React.FC<{
   const dispatch = useAppDispatch();
 
   const account1 = useAppSelector((state) => {
-    console.log('state.accounts', state.accounts);
     return state.accounts.find(
       (account) => account.name === accountSelected1?.name
     );
