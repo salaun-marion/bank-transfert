@@ -1,0 +1,16 @@
+{
+    "Account": {
+        "hello": "Bonjour",
+        "add": "Ajouter"
+    },
+    "Metadata": {
+        "title": "Application de transfert bancaire"
+    },
+    "Transfer": {
+        "impossible": "Transfert ne peut pas aboutir !",
+        "not enough money": "Pas assez d'argent dans le premier compte.",
+        "title": "Transfert",
+        "balance": "Solde",
+        "save": "Sauvegarder"
+    }
+}

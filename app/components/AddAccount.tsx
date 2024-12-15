@@ -50,7 +50,7 @@ export const AddAccount = () => {
         <label htmlFor="accountBalance">Balance</label>
         <input type="number" id="accountBalance" required />
 
-        <button>Add</button>
+        <button>{t('add')}</button>
       </form>
     </section>
   );

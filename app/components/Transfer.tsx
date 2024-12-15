@@ -5,11 +5,13 @@ import React from 'react';
 import { useAppSelector, useAppDispatch } from '../../lib/hooks';
 import { accountsTransfer } from '@/lib/features/accounts/accountsSlice';
 import { Account, EditAccountFormElements } from '@/models/AccountsTypes';
+import { useTranslations } from 'next-intl';
 
 export const Transfer: React.FC<{
   accountSelected1: Account | undefined;
   accountSelected2: Account | undefined;
 }> = ({ accountSelected1, accountSelected2 }) => {
+  const t = useTranslations('Transfer');
   const dispatch = useAppDispatch();
 
   const account1 = useAppSelector((state) => {
@@ -24,7 +26,7 @@ export const Transfer: React.FC<{
   if (!account1 || !account2) {
     return (
       <section>
-        <h2>Transfert cannot happen!</h2>
+        <h2>{t('impossible')}</h2>
       </section>
     );
   }
@@ -48,17 +50,17 @@ export const Transfer: React.FC<{
       );
     } else {
       //TODO : improve the alert
-      alert('Not enough money from the first account.');
+      alert(t('not enough money'));
     }
   };
 
   return (
     <section>
-      <h2>Transfert</h2>
+      <h2>{t('title')}</h2>
       <form onSubmit={onSaveAccountClicked}>
-        <label htmlFor="accountBalance">Balance</label>
+        <label htmlFor="accountBalance">{t('balance')}</label>
         <input type="number" id="accountBalance" required />
-        <button>Save</button>
+        <button>{t('save')}</button>
       </form>
     </section>
   );
