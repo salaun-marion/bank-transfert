@@ -1,7 +1,18 @@
 {
-    "Account": {
-        "hello": "Hello",
+    "CreateAccount": {
+        "create": "Create a new account",
+        "name": "Name",
+        "currency": "Currency",
+        "euro": "Euro",
+        "US dollar": "US Dollar",
+        "yen": "Yen",
+        "balance": "Balance",
         "add": "Add"
+    },
+    "Select Account": {
+        "accounts": "Accounts",
+        "1staccount": "Select first account",
+        "2ndaccount": "Select second account"
     },
     "Metadata": {
         "title": "Bank transfer app"

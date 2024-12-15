@@ -1,7 +1,18 @@
 {
-    "Account": {
-        "hello": "Bonjour",
+    "CreateAccount": {
+        "create": "Créer un nouveau compte",
+        "name": "Nom",
+        "currency": "Devise",
+        "euro": "Euro",
+        "US dollar": "Dollar US",
+        "yen": "Yen",
+        "balance": "Solde",
         "add": "Ajouter"
+    },
+    "Select Account": {
+        "accounts": "Comptes",
+        "1staccount": "Sélectionnez le premier compte",
+        "2ndaccount": "Sélectionnez le deuxième compte"
     },
     "Metadata": {
         "title": "Application de transfert bancaire"

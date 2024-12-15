@@ -12,7 +12,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import React from 'react';
 
 export const AddAccount = () => {
-  const t = useTranslations('Account');
+  const t = useTranslations('CreateAccount');
   const dispatch = useAppDispatch();
 
   const handleSubmit = (e: React.FormEvent<AddAccountFormElements>) => {
@@ -37,17 +37,17 @@ export const AddAccount = () => {
 
   return (
     <section>
-      <h2>{t('hello')}</h2>
+      <h2>{t('create')}</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="accountName">Name</label>
+        <label htmlFor="accountName">{t('name')}</label>
         <input type="text" id="accountName" required />
-        <label htmlFor="accountCurrency">Currency</label>
+        <label htmlFor="accountCurrency">{t('currency')}</label>
         <select id="accountCurrency" required>
-          <option value="€">Eur</option>
-          <option value="$">US Dollar</option>
-          <option value="¥">Yen</option>
+          <option value="€">{t('euro')}</option>
+          <option value="$">{t('US dollar')}</option>
+          <option value="¥">{t('yen')}</option>
         </select>
-        <label htmlFor="accountBalance">Balance</label>
+        <label htmlFor="accountBalance">{t('balance')}</label>
         <input type="number" id="accountBalance" required />
 
         <button>{t('add')}</button>

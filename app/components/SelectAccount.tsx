@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { Account } from '@/models/AccountsTypes';
 import { useAppDispatch } from '../../lib/hooks';
 import { useState, useEffect } from 'react';
@@ -7,6 +8,7 @@ import { Transfer } from './Transfer';
 import { getAccounts } from '@/lib/features/accounts/accountsSlice';
 
 export const SelectAccount = () => {
+  const t = useTranslations('Select Account');
   const dispatch = useAppDispatch();
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [selectedAccountName1, setSelectAccount1] = useState<String>('');
@@ -30,12 +32,12 @@ export const SelectAccount = () => {
 
   return (
     <section className="accounts-list">
-      <h2>Accounts</h2>
+      <h2>{t('accounts')}</h2>
       <select
         onChange={(e) => setSelectAccount1(e.target.value)}
         value={selectedAccountName1.toString()}
       >
-        <option disabled>Select first account</option>
+        <option disabled>{t('1staccount')}</option>
         {accounts.map((account: Account) => (
           <option key={Number(account.id)}>{account.name}</option>
         ))}
@@ -44,7 +46,7 @@ export const SelectAccount = () => {
         onChange={(e) => SetSelectAccount2(e.target.value)}
         value={selectedAccountName2.toString()}
       >
-        <option disabled>Select second account</option>
+        <option disabled>{t('2ndaccount')}</option>
         {accounts.map((account: Account) => (
           <option key={Number(account.id)}>{account.name}</option>
         ))}
