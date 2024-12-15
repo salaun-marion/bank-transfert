@@ -1,14 +1,19 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+
 import { AddAccount } from '../components/AddAccount';
 import { SelectAccount } from '../components/SelectAccount';
-import { getTranslations } from 'next-intl/server';
+import Header from '../components/Header';
 
 export default function IndexPage() {
   return (
-    <div className="global-container">
-      <AddAccount />
-      <SelectAccount />
-    </div>
+    <>
+      <Header />
+      <div className="global-container">
+        <AddAccount />
+        <SelectAccount />
+      </div>
+    </>
   );
 }
 

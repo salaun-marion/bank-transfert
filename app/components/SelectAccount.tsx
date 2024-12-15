@@ -32,7 +32,7 @@ export const SelectAccount = () => {
     account.name === accountName;
 
   return (
-    <section className="account-transfer container">
+    <section className="select-account container">
       <h2>{t('accounts')}</h2>
       {t('from')}
       <select
