@@ -52,13 +52,13 @@ const accountsSlice = createSlice({
     accountsTransfer: create.reducer(
       (state, action: PayloadAction<Transfert>) => {
         action.type = 'accountsTransfer';
-        const { id1, id2, balance } = action.payload;
+        const { id1, id2, balance1, balance2 } = action.payload;
         const account1 = state.accounts.find((account) => account.id === id1);
         const account2 = state.accounts.find((account) => account.id === id2);
 
         if (account1 && account2) {
-          account1.balance -= balance;
-          account2.balance += balance;
+          account1.balance -= balance1;
+          account2.balance += balance2;
         }
       }
     ),

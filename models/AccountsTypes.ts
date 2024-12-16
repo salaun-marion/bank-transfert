@@ -14,7 +14,8 @@ export interface Account {
 export interface Transfert {
   id1: String;
   id2: String;
-  balance: number;
+  balance1: number;
+  balance2: number;
 }
 
 export interface Conversion {

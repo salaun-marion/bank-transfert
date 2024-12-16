@@ -12,13 +12,13 @@ export const AccountsList = () => {
     <article className="account" key={Number(account.id)}>
       <h3>{account.name}</h3>
       <p className="account-balance">
-        {account.balance} {account.currency}
+        {account.balance.toFixed(2)} {account.currency}
       </p>
     </article>
   ));
 
   return (
-    <section className="container list-container">
+    <section className="container list-account">
       <h2>Accounts</h2>
       {renderedAccounts}
     </section>

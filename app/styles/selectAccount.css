@@ -6,10 +6,9 @@
 .save-button{
     background-color: var(--cyan);
     color: var(--dark-brown);
-}
-
-.transfer{
-    border-top: 0.5px solid var(--medium-brown);
+    position:relative;
+    bottom:0;
+    right:0;
 }
 
 h4{

@@ -9,18 +9,14 @@
 
 ## TL;DR
 
-`npm i` for installing all the packages inside `src`
-
-`npm run build` for compiling at the app
-
-`npm run start` or
-`npm run dev` for looking at the app
-
-`npm run test` to run unit test
+1. `npm i` for installing all the packages inside `src`
+2. `npm run build` for compiling at the app
+3. `npm run start` or`npm run dev` for looking at the app
+4. `npm run test` to run unit test
 
 ## What to look
 
-Feel free to use Redux DevTools, available as an add-onfor [Chrome](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/), inspect the different *state* and *action*.
+Feel free to use Redux DevTools, available as an add-on for [Chrome](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/), inspect the different *state* and *action*.
 
 Additionally, check the console for messages from the stubbed back-end, which will provide insights into the application's behavior.
 
@@ -28,5 +24,5 @@ Additionally, check the console for messages from the stubbed back-end, which wi
 
 - **Mock Back-end**: The mock back-end implementation is incomplete due to time constraints.
 - **Redux Smoothness**: I attempted to integrate various implementations (both asynchronous and synchronous logic) for demonstration purposes. As a result, some parts of the code could be cleaner.
-- **User Interface**: The UI is quite basic and could benefit from significant improvements, particularly regarding error and alert messages. Unfortunately, time limitations hindered further enhancements.
+- **User Interface**: The UI is quite basic and could benefit from significant improvements, particularly regarding error and alert messages.
 - **Testing**: Similar to the UI, testing was also limited by time. I aimed to use Cypress for testing, as Redux documentation recommends testing Redux within the broader context of the application.

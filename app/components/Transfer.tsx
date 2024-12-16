@@ -62,7 +62,8 @@ export const Transfer: React.FC<{
           accountsTransfer({
             id1: account1.id,
             id2: account2.id,
-            balance: result.payload,
+            balance1: balance,
+            balance2: result.payload,
           })
         );
       });
@@ -77,7 +78,8 @@ export const Transfer: React.FC<{
       <h4>{t('title')}</h4>
       <form onSubmit={onSaveAccountClicked}>
         <label htmlFor="accountBalance">{t('balance')}</label>
-        <input type="number" id="accountBalance" required /> <br />
+        <input type="number" id="accountBalance" min="0" required />{' '}
+        {account1.currency} <br />
         <button className="save-button">{t('save')}</button>
       </form>
     </section>

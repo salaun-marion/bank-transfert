@@ -34,7 +34,7 @@ export const SelectAccount = () => {
   return (
     <section className="select-account container">
       <h2>{t('accounts')}</h2>
-      {t('from')}
+      <label>{t('from')}</label>
       <select
         onChange={(e) => setSelectAccount1(e.target.value)}
         value={selectedAccountName1.toString()}
@@ -44,8 +44,8 @@ export const SelectAccount = () => {
           <option key={Number(account.id)}>{account.name}</option>
         ))}
       </select>
-      <br />
-      {t('to')}
+
+      <label>{t('to')}</label>
       <select
         onChange={(e) => setSelectAccount2(e.target.value)}
         value={selectedAccountName2.toString()}

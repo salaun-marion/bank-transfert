@@ -13,16 +13,17 @@
 
 /* General css */
 html,
-body{
+body {
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  background-color: var(--cream) ;
+  background-color: var(--cream);
 }
 
-h2, h4 {
+h2,
+h4 {
   padding: 0;
   margin: 0;
 }
@@ -36,7 +37,8 @@ label {
   width: 150px;
 }
 
-input, select {
+input,
+select {
   margin: 10px 0px;
   padding: 10px;
   width: 280px;
@@ -55,50 +57,50 @@ button {
   color: var(--cream);
 
   font-weight: 700;
+  font-size:16px;
 }
 
-.container{
+.container {
   border-radius: 16px;
   padding: 1em 2em;
-
-  width: fit-content;
+  width: 100%;
   color: var(--very-pale-orange);
 }
 
-.global-container{
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
+.add-account {
+  grid-area: A;
+}
+.select-account {
+  grid-area: S;
+}
+.list-account {
+  grid-area: L;
+}
+
+.global-container {
+  padding: 10%;
+  display: grid;
+  grid-template-areas:
+    'A S'
+    'L L';
+  grid-gap: 10%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 /* Media queries */
-@media screen and (min-width:320px) and (max-width: 1014px) {
+@media screen and (min-width: 320px) and (max-width: 1014px) {
   .global-container {
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-  }
-  .add-account{
-    margin-bottom: 20px;
-    margin-right: 0em  !important;
+    grid-template-areas:
+    'A' 
+    'S'
+    'L ';
+    grid-gap: 5%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
 }
 
-@media only screen 
-    and (width: 375px) 
-    and (height: 667px)  { 
-
-      .container{
-        height: 300px;
-      }
-      .add-account{
-        margin-bottom: 0px;
-      }
- 
-}
-
-
+/* TODO : fix UI for smartphone */
+/* @media only screen and (width: 375px) and (height: 667px) {
+} */
