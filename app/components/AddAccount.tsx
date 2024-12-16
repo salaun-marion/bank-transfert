@@ -50,9 +50,9 @@ export const AddAccount = () => {
         <br />
         <label htmlFor="accountCurrency">{t('currency')}</label>
         <select data-testid="accountCurrency" id="accountCurrency" required>
-          <option value="€">{t('euro')}</option>
-          <option value="$">{t('US dollar')}</option>
-          <option value="¥">{t('yen')}</option>
+          <option value="EUR">{t('euro')}</option>
+          <option value="USD">{t('US dollar')}</option>
+          <option value="JPY">{t('yen')}</option>
         </select>{' '}
         <br />
         <label data-testid="accountBalance" htmlFor="accountBalance">

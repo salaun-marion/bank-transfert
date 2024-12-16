@@ -3,7 +3,10 @@
 import React from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../lib/hooks';
-import { accountsTransfer } from '@/lib/features/accounts/accountsSlice';
+import {
+  accountsTransfer,
+  currencyConversion,
+} from '@/lib/features/accounts/accountsSlice';
 import { Account, EditAccountFormElements } from '@/models/AccountsTypes';
 import { useTranslations } from 'next-intl';
 
@@ -30,14 +33,13 @@ export const Transfer: React.FC<{
       </section>
     );
   }
-  if ( account1 === account2) {
+  if (account1 === account2) {
     return (
       <section>
         <h2>{t('same')}</h2>
       </section>
     );
   }
-
 
   const onSaveAccountClicked = (
     e: React.FormEvent<EditAccountFormElements>
@@ -50,12 +52,20 @@ export const Transfer: React.FC<{
 
     if (account1.balance >= balance) {
       dispatch(
-        accountsTransfer({
-          id1: account1.id,
-          id2: account2.id,
+        currencyConversion({
+          currency1: account1.currency,
+          currency2: account2.currency,
           balance,
         })
-      );
+      ).then((result: any) => {
+        dispatch(
+          accountsTransfer({
+            id1: account1.id,
+            id2: account2.id,
+            balance: result.payload,
+          })
+        );
+      });
     } else {
       //TODO : improve the alert
       alert(t('not enough money'));

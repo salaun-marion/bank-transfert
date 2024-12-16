@@ -1,7 +1,7 @@
 export enum Currency {
-  Eur = '€',
-  USdollar = '$',
-  Yen = '¥',
+  EUR = 'EUR',
+  USD = 'USD',
+  JPY = 'JPY',
 }
 
 export interface Account {
@@ -17,6 +17,13 @@ export interface Transfert {
   balance: number;
 }
 
+export interface Conversion {
+  currency1: Currency;
+  currency2: Currency;
+  balance: number;
+}
+
+//TODO remove interface for Form from here -> put them back in their component
 interface AddAccountFormFields extends HTMLFormControlsCollection {
   accountName: HTMLInputElement;
   accountCurrency: HTMLSelectElement;

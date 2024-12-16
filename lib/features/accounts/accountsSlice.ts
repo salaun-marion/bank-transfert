@@ -1,16 +1,29 @@
 // import { RootState } from '@/lib/store';
-import { Account, Transfert } from '@/models/AccountsTypes';
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { GET } from '@/app/api/accounts/server';
+import {
+  Account,
+  Conversion,
+  Currency,
+  Transfert,
+} from '@/models/AccountsTypes';
+import {
+  createAsyncThunk,
+  createSlice,
+  current,
+  PayloadAction,
+} from '@reduxjs/toolkit';
+import { GET, POST } from '@/app/api/accounts/server';
+import { useAppDispatch } from '@/lib/hooks';
 
 interface AccountsState {
   accounts: Account[];
+  balance: Number;
   status: 'idle' | 'pending' | 'succeeded' | 'failed';
   error: string | null;
 }
 
 const initialState: AccountsState = {
   accounts: [],
+  balance: 0,
   status: 'idle',
   error: null,
 };
@@ -19,6 +32,14 @@ export const getAccounts = createAsyncThunk('/getAccounts', async () => {
   const response = await GET();
   return response.data;
 });
+
+export const currencyConversion = createAsyncThunk(
+  '/currencyConversion',
+  async ({ currency1, currency2, balance }: Conversion) => {
+    const response = await POST({ currency1, currency2, balance });
+    return response.balance;
+  }
+);
 
 const accountsSlice = createSlice({
   name: 'accounts',
@@ -46,7 +67,11 @@ const accountsSlice = createSlice({
     builder.addCase(getAccounts.fulfilled, (state, action) => {
       action.type = 'getAccounts';
       state.accounts = action.payload;
-    });
+    }),
+      builder.addCase(currencyConversion.fulfilled, (state, action) => {
+        action.type = 'currencyConversion';
+        state.balance = action.payload;
+      });
   },
 });
 
