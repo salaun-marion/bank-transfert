@@ -81,7 +81,6 @@ button {
     flex-direction: column;
     justify-content: center; 
     align-items: center; 
-
   }
   .add-account{
     margin-bottom: 20px;
@@ -89,10 +88,17 @@ button {
   }
 }
 
+@media only screen 
+    and (width: 375px) 
+    and (height: 667px)  { 
 
-@media screen and (prefers-color-scheme: dark) {
-  body {
-    --bg-color: black;
-    --text-color: white;
-  }
+      .container{
+        height: 300px;
+      }
+      .add-account{
+        margin-bottom: 0px;
+      }
+ 
 }
+
+

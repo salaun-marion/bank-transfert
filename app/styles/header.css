@@ -42,5 +42,39 @@ p {
         "logo subtitle buttonFR buttonEN";
     grid-template-columns: 100px 0.9fr 50px 50px;
     grid-template-rows: 30px 30px;
-    width: 100%;
 }
+
+@media screen and (min-width:320px) and (max-width: 1014px) {
+
+    .buttonLanguage{
+        font-size: 24px;
+    }
+    .slogan-container {
+        padding: 3em 3em 0 3em;
+        grid-template-areas: 
+            "logo buttonFR buttonEN"
+            "logo buttonFR buttonEN"
+            "title title title"
+            "subtitle subtitle subtitle";
+        grid-template-columns: 200px 50px 50px;
+        grid-template-rows: 50px 50px 30px 30px;
+        margin-bottom: 2em;
+    }
+}
+
+@media only screen 
+    and (width: 375px) 
+    and (height: 667px)  { 
+
+    .buttonLanguage{
+        font-size: 18px;
+    }
+    .slogan-container {
+        grid-template-columns: 100px 50px 50px;
+        margin-bottom: 0em;
+
+    }
+
+}
+
+
