@@ -20,7 +20,8 @@
         "title": "Bank transfer app"
     },
     "Transfer": {
-        "impossible": "Transfer cannot happen!",
+        "loading": "Loading",
+        "same": "Same account",
         "not enough money": "Not enough money from the first account.",
         "title": "Transfer",
         "balance": "Balance",

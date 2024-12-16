@@ -25,10 +25,12 @@ const accountsSlice = createSlice({
   initialState,
   reducers: (create) => ({
     accountAdded: create.reducer((state, action: PayloadAction<Account>) => {
+      action.type = 'accountAdded';
       state.accounts.push(action.payload);
     }),
     accountsTransfer: create.reducer(
       (state, action: PayloadAction<Transfert>) => {
+        action.type = 'accountsTransfer';
         const { id1, id2, balance } = action.payload;
         const account1 = state.accounts.find((account) => account.id === id1);
         const account2 = state.accounts.find((account) => account.id === id2);
@@ -42,6 +44,7 @@ const accountsSlice = createSlice({
   }),
   extraReducers: (builder) => {
     builder.addCase(getAccounts.fulfilled, (state, action) => {
+      action.type = 'getAccounts';
       state.accounts = action.payload;
     });
   },

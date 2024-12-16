@@ -40,17 +40,28 @@ export const AddAccount = () => {
       <h2>{t('create')}</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="accountName">{t('name')}</label>
-        <input type="text" id="accountName" required /> <br />
+        <input
+          data-testid="accountName"
+          type="text"
+          id="accountName"
+          maxLength={30}
+          required
+        />{' '}
+        <br />
         <label htmlFor="accountCurrency">{t('currency')}</label>
-        <select id="accountCurrency" required>
+        <select data-testid="accountCurrency" id="accountCurrency" required>
           <option value="€">{t('euro')}</option>
           <option value="$">{t('US dollar')}</option>
           <option value="¥">{t('yen')}</option>
         </select>{' '}
         <br />
-        <label htmlFor="accountBalance">{t('balance')}</label>
+        <label data-testid="accountBalance" htmlFor="accountBalance">
+          {t('balance')}
+        </label>
         <input type="number" id="accountBalance" required /> <br />
-        <button className="add-button">{t('add')}</button>
+        <button data-testid="addButton" className="add-button">
+          {t('add')}
+        </button>
       </form>
     </section>
   );

@@ -20,7 +20,8 @@
         "title": "Application de transfert bancaire"
     },
     "Transfer": {
-        "impossible": "Le transfert ne peut pas aboutir.",
+        "loading": "Chargement",
+        "same": "Compte similaire",
         "not enough money": "Pas assez d'argent dans le premier compte.",
         "title": "Transfert",
         "balance": "Solde",
