@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.0",
+    "@shoelace-style/shoelace": "^2.19.1",
     "next": "latest",
     "next-intl": "^3.26.1",
     "react": "^18.3.1",

@@ -1,11 +1,18 @@
 'use client';
-import { Account } from '@/models/AccountsTypes';
-import { useAppSelector } from '../../lib/hooks';
+
 import '../styles/listAccount.css';
+
+import { Account } from '@/models/AccountsTypes';
+
+import { useAppSelector } from '../../lib/hooks';
+import { Loading } from './Loading';
 
 export const AccountsList = () => {
   const accounts = useAppSelector((state) => {
     return state.accounts;
+  });
+  const isLoading = useAppSelector((state) => {
+    return state.status;
   });
 
   const renderedAccounts = accounts.map((account: Account) => (
@@ -18,9 +25,11 @@ export const AccountsList = () => {
   ));
 
   return (
-    <section className="container list-account">
-      <h2>Accounts</h2>
-      {renderedAccounts}
-    </section>
+    <>
+      <section className="container list-account">
+        <h2>Accounts</h2>
+        {isLoading === 'pending' ? <Loading /> : renderedAccounts}
+      </section>
+    </>
   );
 };

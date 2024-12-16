@@ -1,18 +1,8 @@
-// import { RootState } from '@/lib/store';
-import {
-  Account,
-  Conversion,
-  Currency,
-  Transfert,
-} from '@/models/AccountsTypes';
-import {
-  createAsyncThunk,
-  createSlice,
-  current,
-  PayloadAction,
-} from '@reduxjs/toolkit';
+import { useTranslations } from 'next-intl';
+
 import { GET, POST } from '@/app/api/accounts/server';
-import { useAppDispatch } from '@/lib/hooks';
+import { Account, Conversion, Transfert } from '@/models/AccountsTypes';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface AccountsState {
   accounts: Account[];
@@ -56,7 +46,15 @@ const accountsSlice = createSlice({
         const account1 = state.accounts.find((account) => account.id === id1);
         const account2 = state.accounts.find((account) => account.id === id2);
 
-        if (account1 && account2) {
+        console.log('account1', account1!.id);
+        console.log('account2', account2!.id);
+
+        if (account1 && account1.balance < balance1) {
+          state.error = 'not enough money';
+        } else if (account1!.id === account2!.id) {
+          state.error = 'same';
+        } else if (account1 && account2) {
+          state.error = null;
           account1.balance -= balance1;
           account2.balance += balance2;
         }
@@ -64,12 +62,18 @@ const accountsSlice = createSlice({
     ),
   }),
   extraReducers: (builder) => {
-    builder.addCase(getAccounts.fulfilled, (state, action) => {
+    builder.addCase(getAccounts.pending, (state, action) => {
       action.type = 'getAccounts';
-      state.accounts = action.payload;
+      state.status = 'pending';
     }),
+      builder.addCase(getAccounts.fulfilled, (state, action) => {
+        action.type = 'getAccounts';
+        state.status = 'idle';
+        state.accounts = action.payload;
+      }),
       builder.addCase(currencyConversion.fulfilled, (state, action) => {
         action.type = 'currencyConversion';
+        state.status = 'idle';
         state.balance = action.payload;
       });
   },

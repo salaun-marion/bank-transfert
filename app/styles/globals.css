@@ -1,6 +1,9 @@
 /* Font*/
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/*Theme*/
+@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/themes/light.css';
+
 /* Colors */
 :root {
   --soft-red: hsl(10, 79%, 65%);
@@ -9,6 +12,7 @@
   --medium-brown: hsl(28, 10%, 53%);
   --cream: hsl(27, 66%, 92%);
   --very-pale-orange: hsl(33, 100%, 98%);
+  --sl-tooltip-arrow-size: 0;
 }
 
 /* General css */
@@ -60,6 +64,13 @@ button {
   font-size:16px;
 }
 
+.tootltip {
+  font: 16px sans-serif;
+  background-color: var(--sl-color-neutral-0);
+  color: var(--sl-color-neutral-900);
+  padding: 1rem;
+}
+
 .container {
   border-radius: 16px;
   padding: 1em 2em;
@@ -67,6 +78,7 @@ button {
   color: var(--very-pale-orange);
 }
 
+/*Placement with grid*/
 .add-account {
   grid-area: A;
 }

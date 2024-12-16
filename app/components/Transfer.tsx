@@ -7,6 +7,7 @@ import {
   accountsTransfer,
   currencyConversion,
 } from '@/lib/features/accounts/accountsSlice';
+import SlTooltip from '@shoelace-style/shoelace/dist/react/tooltip';
 import { Account, EditAccountFormElements } from '@/models/AccountsTypes';
 import { useTranslations } from 'next-intl';
 
@@ -17,40 +18,29 @@ export const Transfer: React.FC<{
   const t = useTranslations('Transfer');
   const dispatch = useAppDispatch();
 
-  const account1 = useAppSelector((state) => {
-    return state.accounts.find(
-      (account) => account.name === accountSelected1?.name
-    );
-  });
+  //fetch accounts
+  const account1 = useAppSelector((state) =>
+    state.accounts.find((account) => account.name === accountSelected1?.name)
+  );
+
+  console.log('accounts1', account1);
   const account2 = useAppSelector((state) =>
     state.accounts.find((account) => account.name === accountSelected2?.name)
   );
-
-  if (!account1 || !account2) {
-    return (
-      <section>
-        <h2>{t('loading')}</h2>
-      </section>
-    );
-  }
-  if (account1 === account2) {
-    return (
-      <section>
-        <h2>{t('same')}</h2>
-      </section>
-    );
-  }
+  //case of error
+  const isError = useAppSelector((state) => {
+    return state.error;
+  });
 
   const onSaveAccountClicked = (
     e: React.FormEvent<EditAccountFormElements>
   ) => {
-    // Prevent server submission
     e.preventDefault();
 
     const { elements } = e.currentTarget;
     const balance = Number(elements.accountBalance.value);
 
-    if (account1.balance >= balance) {
+    if (account1 && account2) {
       dispatch(
         currencyConversion({
           currency1: account1.currency,
@@ -67,9 +57,6 @@ export const Transfer: React.FC<{
           })
         );
       });
-    } else {
-      //TODO : improve the alert
-      alert(t('not enough money'));
     }
   };
 
@@ -79,8 +66,15 @@ export const Transfer: React.FC<{
       <form onSubmit={onSaveAccountClicked}>
         <label htmlFor="accountBalance">{t('balance')}</label>
         <input type="number" id="accountBalance" min="0" required />{' '}
-        {account1.currency} <br />
-        <button className="save-button">{t('save')}</button>
+        {account1 ? account1.currency : ''} <br />
+        <SlTooltip
+          className="tooltip"
+          content={isError ? t(isError) : t('success')}
+          placement="right"
+          trigger="click"
+        >
+          <button className="save-button">{t('save')}</button>
+        </SlTooltip>
       </form>
     </section>
   );

@@ -13,16 +13,17 @@
         "accounts": "Accounts",
         "from": "From ",
         "to": " to ",
-        "1staccount": "Select first account",
-        "2ndaccount": "Select second account"
+        "1th account": "Select first account",
+        "2th account": "Select second account"
     },
     "Metadata": {
         "title": "Bank transfer app"
     },
     "Transfer": {
-        "loading": "Loading",
+        "success": "Transfer done",
+        "error": "Accounts are not loaded",
         "same": "Same account",
-        "not enough money": "Not enough money from the first account.",
+        "not enough money": "Not enough money from the origin account.",
         "title": "Transfer",
         "balance": "Balance",
         "save": "Save"
