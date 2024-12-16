@@ -13,15 +13,34 @@ p {
     font-size: large;
 }
 
+.buttonLanguage{
+    color: var(--medium-brown);
+    background-color: var(--light-pale-orange);
+    padding: 0px;
+    width: fit-content;
+}
+
+.buttonLanguage:focus{
+    color: var(--dark-brown);
+}
+
+.buttonFR{
+    grid-area: buttonFR;
+    margin-right: 10px;
+}
+
+.buttonEN{
+    grid-area: buttonEN;
+
+}
+
 .slogan-container {
-    padding: 3em 0 0 3em;
-
-
+    padding: 3em 3em 0 3em;
     display: grid;
     grid-template-areas: 
-        "logo title"
-        "logo subtitle";
-    grid-template-columns: 100px 1fr;
+        "logo title buttonFR buttonEN"
+        "logo subtitle buttonFR buttonEN";
+    grid-template-columns: 100px 0.9fr 50px 50px;
     grid-template-rows: 30px 30px;
-    width: 300px;
+    width: 100%;
 }
