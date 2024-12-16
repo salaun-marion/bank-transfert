@@ -1,29 +1,32 @@
-# Redux Toolkit TypeScript Example
+# Bank Transfer application
 
-This example shows how to integrate Next.js with [Redux Toolkit](https://redux-toolkit.js.org).
+## Framework versions
 
-**Redux Toolkit**(also known as "RTK" for short) provides a standardized way to write Redux logic. It includes utilities that help simplify many common use cases, including [store setup](https://redux-toolkit.js.org/api/configureStore), [creating reducers and writing immutable update logic](https://redux-toolkit.js.org/api/createreducer), and even [creating entire "slices" of state at once](https://redux-toolkit.js.org/api/createslice). This example showcases each of these features in conjunction with Next.js.
+- Next.Js : 15
+- Redux : 5.0.1
+- Jest : 29.2.5
+- Next-intl : 3.26.1
 
-## Deploy Your Own
+## TL;DR
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+`npm i` for installing all the packages inside `src`
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-redux&project-name=with-redux&repository-name=with-redux)
+`npm run build` for compiling at the app
 
-## How to Use
+`npm run start` or
+`npm run dev` for looking at the app
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+`npm run test` to run unit test
 
-```bash
-npx create-next-app --example with-redux with-redux-app
-```
+## What to look
 
-```bash
-yarn create next-app --example with-redux with-redux-app
-```
+Feel free to use Redux DevTools, available as an add-onfor [Chrome](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/), inspect the different *state* and *action*.
 
-```bash
-pnpm create next-app --example with-redux with-redux-app
-```
+Additionally, check the console for messages from the stubbed back-end, which will provide insights into the application's behavior.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Areas for Improvement
+
+- **Mock Back-end**: The mock back-end implementation is incomplete due to time constraints.
+- **Redux Smoothness**: I attempted to integrate various implementations (both asynchronous and synchronous logic) for demonstration purposes. As a result, some parts of the code could be cleaner.
+- **User Interface**: The UI is quite basic and could benefit from significant improvements, particularly regarding error and alert messages. Unfortunately, time limitations hindered further enhancements.
+- **Testing**: Similar to the UI, testing was also limited by time. I aimed to use Cypress for testing, as Redux documentation recommends testing Redux within the broader context of the application.

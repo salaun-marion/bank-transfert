@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { AddAccount } from '../components/AddAccount';
 import { SelectAccount } from '../components/SelectAccount';
 import Header from '../components/Header';
+import { AccountsList } from '../components/ListAccount';
 
 export default function IndexPage() {
   return (
@@ -12,6 +13,7 @@ export default function IndexPage() {
       <div className="global-container">
         <AddAccount />
         <SelectAccount />
+        <AccountsList />
       </div>
     </>
   );
