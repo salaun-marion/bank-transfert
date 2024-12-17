@@ -1,0 +1,31 @@
+{
+    "CreateAccount": {
+        "create": "Create a new account",
+        "name": "Name",
+        "currency": "Currency",
+        "euro": "Euro",
+        "US dollar": "US Dollar",
+        "yen": "Yen",
+        "balance": "Balance",
+        "add": "Add"
+    },
+    "Select Account": {
+        "accounts": "Accounts",
+        "from": "From ",
+        "to": " to ",
+        "1th account": "Select first account",
+        "2th account": "Select second account"
+    },
+    "Metadata": {
+        "title": "Bank transfer app"
+    },
+    "Transfer": {
+        "success": "Transfer done",
+        "error": "Accounts are not loaded",
+        "same": "Same account",
+        "not enough money": "Not enough money from the origin account.",
+        "title": "Transfer",
+        "balance": "Balance",
+        "save": "Save"
+    }
+}

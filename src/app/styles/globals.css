@@ -1,0 +1,118 @@
+/* Font*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Theme*/
+@import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/themes/light.css';
+
+/* Colors */
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+  --sl-tooltip-arrow-size: 0;
+}
+
+/* General css */
+html,
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  background-color: var(--cream);
+}
+
+h2,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+}
+
+input,
+select {
+  margin: 10px 0px;
+  padding: 10px;
+  width: 280px;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid var(--dark-brown);
+  box-shadow: 1px 1px 1px var(--medium-brown);
+  background-color: var(--very-pale-orange);
+}
+
+button {
+  border-radius: 16px;
+  border: none;
+  padding: 10px 20px;
+
+  color: var(--cream);
+
+  font-weight: 700;
+  font-size:16px;
+}
+
+.tootltip {
+  font: 16px sans-serif;
+  background-color: var(--sl-color-neutral-0);
+  color: var(--sl-color-neutral-900);
+  padding: 1rem;
+}
+
+.container {
+  border-radius: 16px;
+  padding: 1em 2em;
+  width: 100%;
+  color: var(--very-pale-orange);
+}
+
+/*Placement with grid*/
+.add-account {
+  grid-area: A;
+}
+.select-account {
+  grid-area: S;
+}
+.list-account {
+  grid-area: L;
+}
+
+.global-container {
+  padding: 10%;
+  display: grid;
+  grid-template-areas:
+    'A S'
+    'L L';
+  grid-gap: 10%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* Media queries */
+@media screen and (min-width: 320px) and (max-width: 1014px) {
+  .global-container {
+    grid-template-areas:
+    'A' 
+    'S'
+    'L ';
+    grid-gap: 5%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+/* TODO : fix UI for smartphone */
+/* @media only screen and (width: 375px) and (height: 667px) {
+} */

@@ -25,12 +25,13 @@ describe('Transfer', () => {
     getBalanceAccountByName(jane).should('contain', '2110.00');
   });
 
-  //Here the test example is a bit hard-coded, might be improved
+  // Here the test example is a bit hard-coded, might be improved
   //
-  //Ideally here if I will have more time, I will have test the followings :
+  // Ideally here if I will have more time, I will have test the followings :
   // -  not enough money on the account
   // -  same account for transfer
   // -  same currency transfer
   //
-  //I will have also included the tooltip message checking in tests
+  // I will have also included the tooltip message checking in tests
+  // and testing language switch
 });
