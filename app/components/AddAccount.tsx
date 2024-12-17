@@ -1,6 +1,9 @@
 'use client';
 
+import '../styles/addAccount.css';
+
 import { useTranslations } from 'next-intl';
+
 import { accountAdded } from '@/lib/features/accounts/accountsSlice';
 import { useAppDispatch } from '@/lib/hooks';
 import {
@@ -9,7 +12,6 @@ import {
   Currency,
 } from '@/models/AccountsTypes';
 import { nanoid } from '@reduxjs/toolkit';
-import '../styles/addAccount.css';
 
 export const AddAccount = () => {
   const t = useTranslations('CreateAccount');

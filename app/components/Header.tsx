@@ -1,7 +1,10 @@
-import Image from 'next/image';
-import { Link } from '@/i18n/routing';
-import img from '../../public/logo-512.png';
 import '../styles/header.css';
+
+import Image from 'next/image';
+
+import { Link } from '@/i18n/routing';
+
+import img from '../../public/logo-512.png';
 
 export default function Header() {
   return (

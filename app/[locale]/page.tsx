@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import { AddAccount } from '../components/AddAccount';
-import { SelectAccount } from '../components/SelectAccount';
 import Header from '../components/Header';
 import { AccountsList } from '../components/ListAccount';
+import { SelectAccount } from '../components/SelectAccount';
 
 export default function IndexPage() {
   return (

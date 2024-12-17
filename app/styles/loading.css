@@ -1,4 +1,4 @@
-
+/* Loader from : https://cssloaders.github.io/ */
 
 .loader {
   width: 48px;
@@ -6,6 +6,7 @@
   display: inline-block;
   position: relative;
 }
+
 .loader::after,
 .loader::before {
   content: '';  
@@ -19,6 +20,7 @@
   top: 0;
   animation: animloader 2s linear infinite;
 }
+
 .loader::after {
   animation-delay: 1s;
 }

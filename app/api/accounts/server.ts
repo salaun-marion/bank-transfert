@@ -23,4 +23,4 @@ export async function POST(req: Conversion) {
   return { balance: convertedBalance };
 }
 
-//TODO: do the same for POST(add a new Account) and PATCH(update account balance)
+//TODO: do the same for POST(add a new Account)

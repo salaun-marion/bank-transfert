@@ -1,5 +1,3 @@
-import { useTranslations } from 'next-intl';
-
 import { GET, POST } from '@/app/api/accounts/server';
 import { Account, Conversion, Transfert } from '@/models/AccountsTypes';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
@@ -45,9 +43,6 @@ const accountsSlice = createSlice({
         const { id1, id2, balance1, balance2 } = action.payload;
         const account1 = state.accounts.find((account) => account.id === id1);
         const account2 = state.accounts.find((account) => account.id === id2);
-
-        console.log('account1', account1!.id);
-        console.log('account2', account2!.id);
 
         if (account1 && account1.balance < balance1) {
           state.error = 'not enough money';

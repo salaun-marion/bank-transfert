@@ -1,15 +1,16 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import { useAppSelector, useAppDispatch } from '../../lib/hooks';
 import {
   accountsTransfer,
   currencyConversion,
 } from '@/lib/features/accounts/accountsSlice';
-import SlTooltip from '@shoelace-style/shoelace/dist/react/tooltip';
 import { Account, EditAccountFormElements } from '@/models/AccountsTypes';
-import { useTranslations } from 'next-intl';
+import SlTooltip from '@shoelace-style/shoelace/dist/react/tooltip';
+
+import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 
 export const Transfer: React.FC<{
   accountSelected1: Account | undefined;
