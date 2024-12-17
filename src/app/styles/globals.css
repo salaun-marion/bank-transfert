@@ -103,16 +103,17 @@ button {
 /* Media queries */
 @media screen and (min-width: 320px) and (max-width: 1014px) {
   .global-container {
+    padding: 0;
     grid-template-areas:
     'A' 
     'S'
     'L ';
-    grid-gap: 5%;
+    grid-gap: 1%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
-}
 
-/* TODO : fix UI for smartphone */
-/* @media only screen and (width: 375px) and (height: 667px) {
-} */
+  .container{
+    border-radius: 0%;
+  }
+}
