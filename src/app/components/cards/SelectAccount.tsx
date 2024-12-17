@@ -13,7 +13,7 @@ import { Loading } from '../Loading';
 import { Transfer } from '../Transfer';
 
 export const SelectAccount = () => {
-  const t = useTranslations('Select Account');
+  const t = useTranslations('SelectAccount');
 
   const dispatch = useAppDispatch();
 

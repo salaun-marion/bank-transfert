@@ -1,10 +1,16 @@
-import { render } from '@testing-library/react';
-import { AddAccount } from '../app/components/cards/AddAccount';
-import { title, name, currency, balance } from './constants';
 import { NextIntlClientProvider } from 'next-intl';
-import { StoreProvider } from '@/app/[locale]/StoreProvider';
+
+import { render } from '@testing-library/react';
+
+import { StoreProvider } from '../app/[locale]/StoreProvider';
+import { AddAccount } from '../app/components/cards/AddAccount';
+import { balance, currency, name, title } from './constants';
 
 describe('Opinion Form', () => {
+  jest.mock('next-intl', () => ({
+    useTranslations: () => ({ t: (key: any) => key }),
+  }));
+
   it('should render', () => {
     render(
       <StoreProvider>
