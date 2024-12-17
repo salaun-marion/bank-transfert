@@ -11,9 +11,7 @@
 
 ## TL;DR
 
-
-
-1. `npm i` for installing all the packages inside `src` and at the **root** of the project
+1. `npm i` for installing all the packages inside `src` and `cypress` directories
 
 Then inside `src` directory :
 
