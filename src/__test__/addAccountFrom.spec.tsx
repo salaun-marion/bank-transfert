@@ -7,14 +7,18 @@ import { AddAccount } from '../app/components/cards/AddAccount';
 import { balance, currency, name, title } from './constants';
 
 describe('Opinion Form', () => {
-  jest.mock('next-intl', () => ({
-    useTranslations: () => ({ t: (key: any) => key }),
+  const useRouter = jest.spyOn(require('next/router'), 'useRouter');
+  const locale = 'en';
+  const messages = require(`../messages/${locale}.json`);
+
+  useRouter.mockImplementationOnce(() => ({
+    query: { locale: locale },
   }));
 
   it('should render', () => {
     render(
       <StoreProvider>
-        <NextIntlClientProvider locale="en">
+        <NextIntlClientProvider messages={messages} locale="en">
           <AddAccount />
         </NextIntlClientProvider>
       </StoreProvider>
