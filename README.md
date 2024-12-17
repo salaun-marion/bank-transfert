@@ -10,9 +10,13 @@
 ## TL;DR
 
 1. `npm i` for installing all the packages inside `src`
-2. `npm run build` for compiling at the app
-3. `npm run start` or`npm run dev` for looking at the app
-4. `npm run test` to run unit test
+
+Then inside `src` directory :
+
+1. `npm run build` for compiling at the app
+2. `npm run start` or`npm run dev` for looking at the app
+3. `npm run test` to run unit test
+4. `npm run cy:open` to launch the cypress test, select **E2E testing** in the panel configuration, then choose a browser by default, and click on one test
 
 ## What to look
 

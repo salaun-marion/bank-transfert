@@ -5,7 +5,7 @@ import { converter } from '../converter/converter';
 export async function GET() {
   console.log('(GET) --- Fetching the data from the back-end');
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
   return { data: data };
 }

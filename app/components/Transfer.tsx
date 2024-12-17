@@ -24,7 +24,6 @@ export const Transfer: React.FC<{
     state.accounts.find((account) => account.name === accountSelected1?.name)
   );
 
-  console.log('accounts1', account1);
   const account2 = useAppSelector((state) =>
     state.accounts.find((account) => account.name === accountSelected2?.name)
   );
