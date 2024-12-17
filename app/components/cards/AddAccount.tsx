@@ -1,6 +1,6 @@
 'use client';
 
-import '../styles/addAccount.css';
+import '../../styles/addAccount.css';
 
 import { useTranslations } from 'next-intl';
 

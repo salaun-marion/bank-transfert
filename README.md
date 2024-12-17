@@ -16,7 +16,7 @@ Then inside `src` directory :
 1. `npm run build` for compiling at the app
 2. `npm run start` or`npm run dev` for looking at the app
 3. `npm run test` to run unit test
-4. `npm run cy:open` to launch the cypress test, select **E2E testing** in the panel configuration, then choose a browser by default, and click on one test
+4. `npm run cy:open` to launch the cypress test, select **E2E testing** in the panel configuration, then choose a browser by default, and click on one test (don't forget to run the application locally before, see point 2)
 
 ## What to look
 

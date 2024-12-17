@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { AddAccount } from '../app/components/AddAccount';
+import { AddAccount } from '../app/components/cards/AddAccount';
 import { title, name, currency, balance } from './constants';
 import { NextIntlClientProvider } from 'next-intl';
 import { StoreProvider } from '@/app/[locale]/StoreProvider';

@@ -65,7 +65,13 @@ export const Transfer: React.FC<{
       <h4>{t('title')}</h4>
       <form onSubmit={onSaveAccountClicked}>
         <label htmlFor="accountBalance">{t('balance')}</label>
-        <input type="number" id="accountBalance" min="0" required />{' '}
+        <input
+          type="number"
+          id="accountBalance"
+          min="0"
+          data-testid="accountBalanceTransfer"
+          required
+        />{' '}
         {account1 ? account1.currency : ''} <br />
         <SlTooltip
           className="tooltip"
@@ -73,7 +79,9 @@ export const Transfer: React.FC<{
           placement="right"
           trigger="click"
         >
-          <button className="save-button">{t('save')}</button>
+          <button className="save-button" data-testid="saveButton">
+            {t('save')}
+          </button>
         </SlTooltip>
       </form>
     </section>

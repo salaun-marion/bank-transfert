@@ -1,6 +1,6 @@
 'use client';
 
-import '../styles/selectAccount.css';
+import '../../styles/selectAccount.css';
 
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
@@ -8,9 +8,9 @@ import { useEffect, useState } from 'react';
 import { getAccounts } from '@/lib/features/accounts/accountsSlice';
 import { Account } from '@/models/AccountsTypes';
 
-import { useAppDispatch, useAppSelector } from '../../lib/hooks';
-import { Loading } from '../components/Loading';
-import { Transfer } from './Transfer';
+import { useAppDispatch, useAppSelector } from '../../../lib/hooks';
+import { Loading } from '../Loading';
+import { Transfer } from '../Transfer';
 
 export const SelectAccount = () => {
   const t = useTranslations('Select Account');
@@ -63,6 +63,7 @@ export const SelectAccount = () => {
                     ? selectedAccountName1.toString()
                     : selectedAccountName2.toString()
                 }
+                data-testid={`selectAccount${index}`}
               >
                 <option disabled>{t(`${index + 1}th account`)}</option>
                 {accounts.map((account: Account) => (

@@ -1,11 +1,11 @@
 'use client';
 
-import '../styles/listAccount.css';
+import '../../styles/listAccount.css';
 
 import { Account } from '@/models/AccountsTypes';
 
-import { useAppSelector } from '../../lib/hooks';
-import { Loading } from './Loading';
+import { useAppSelector } from '../../../lib/hooks';
+import { Loading } from '../Loading';
 
 export const AccountsList = () => {
   const accounts = useAppSelector((state) => {
@@ -18,7 +18,7 @@ export const AccountsList = () => {
   const renderedAccounts = accounts.map((account: Account) => (
     <article className="account" key={Number(account.id)}>
       <h3>{account.name}</h3>
-      <p className="account-balance">
+      <p className="account-balance" data-testid={`${account.name}balance`}>
         {account.balance.toFixed(2)} {account.currency}
       </p>
     </article>
